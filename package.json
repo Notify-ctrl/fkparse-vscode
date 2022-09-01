@@ -1,0 +1,31 @@
+{
+  "name": "fkparse-vscode",
+  "displayName": "fkparse-vscode",
+  "description": "fkparse language support in VS Code",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.70.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "fkp",
+      "aliases": ["FreeKill Extension", "fkp"],
+      "extensions": [".fkp"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "fkp",
+      "scopeName": "source.fkp",
+      "path": "./syntaxes/fkp.tmLanguage.json"
+    }],
+    "snippets": [
+      {
+        "language": "fkp",
+        "path": "./snippets/snippets.json"
+      }
+    ]
+  }
+}

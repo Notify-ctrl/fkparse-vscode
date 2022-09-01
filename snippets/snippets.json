@@ -1,0 +1,30 @@
+{
+  "newSkill": {
+    "prefix": "$ ",
+    "body": [
+      "$ '$1' \"$2\"\n以上"
+    ],
+    "description": "快速补充技能体"
+  },
+  "triggerSkill": {
+    "prefix": "触发技",
+    "body": [
+      "触发技\n时机:\n条件:\n效果:\n"
+    ],
+    "description": "触发技"
+  },
+  "vsSkill": {
+    "prefix": "视为技",
+    "body": [
+      "视为技\n条件:\n选牌规则:\n可以点确定:\n视为规则:\n"
+    ],
+    "description": "视为技"
+  },
+  "activeSkill": {
+    "prefix": "主动技",
+    "body": [
+      "主动技\n条件:\n选牌规则:\n选目标规则:\n可以点确定:\n使用后:\n"
+    ],
+    "description": "主动技"
+  }
+}

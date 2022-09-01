@@ -1,0 +1,203 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "FreeKill Extension",
+  "patterns": [
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#string"
+    },
+    {
+      "include": "#comment"
+    },
+    {
+      "include": "#markup"
+    },
+    {
+      "include": "#variable"
+    },
+    {
+      "include": "#constant"
+    }
+  ],
+  "repository": {
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.en.fkp",
+          "match": "\\b(let|if|then|elseif|else|end|repeat|until|return|break|while|def)\\b"
+        },
+        {
+          "name": "keyword.control.cn.fkp",
+          "match": "(令|若|则|否则若|否则|以上|重复此流程：|重复此流程:|直到|返回|中止此流程|当|定义函数)"
+        },
+        {
+          "name": "keyword.other.cn.fkp",
+          "match": "大于|小于|不小于|不大于|不是|是|且|或|为"
+        },
+        {
+          "name": "keyword.operator.en.fkp",
+          "match": "\\b(and|\\&\\&|or|\\=|equal|\\|\\|)\\b"
+        }
+      ]
+    },
+    "string": {
+      "patterns": [
+        {
+          "begin": "“",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.begin.fkp"
+            }
+          },
+          "end": "”[ \\t]*|(?=\\n)",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.end.fkp"
+            }
+          },
+          "name": "string.quoted.single.fkp"
+        },
+        {
+          "begin": "\"",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.begin.fkp"
+            }
+          },
+          "end": "\"[ \\t]*|(?=\\n)",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.string.end.fkp"
+            }
+          },
+          "name": "string.quoted.double.fkp"
+        }
+      ]
+    },
+    "comment": {
+      "patterns": [
+        {
+          "begin": "--",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.comment.fkp"
+            }
+          },
+          "end": "\\n",
+          "name": "comment.line.double-dash.fkp"
+        },
+        {
+          "begin": "//",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.comment.fkp"
+            }
+          },
+          "end": "\\n",
+          "name": "comment.line.double-slash.fkp"
+        },
+        {
+          "begin": "注：",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.comment.fkp"
+            }
+          },
+          "end": "\\n",
+          "name": "comment.line.cmt.fkp"
+        },
+        {
+          "begin": "注:",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.comment.fkp"
+            }
+          },
+          "end": "\\n",
+          "name": "comment.line.cmt2.fkp"
+        },
+        {
+          "match": "然后|立即|，|。",
+          "name": "comment.word.then.fkp"
+        }
+      ]
+    },
+    "markup": {
+      "patterns": [
+        {
+          "name": "markup.underline.en.fkp",
+          "match": "\\b(Event:|Condition:|Effect:|CardFilter:|TargetFilter:)\\b"
+        },
+        {
+          "name": "markup.underline.cn.fkp",
+          "match": "(时机|条件|效果|选牌规则|选目标规则|可以点确定|使用后|视为规则|响应条件|响应规则|禁止指定目标|距离修正|手牌上限修正|手牌上限固定|出牌次数修正|出牌距离修正|出牌目标数量修正|攻击范围修正|攻击范围固定)(:|：)"
+        },
+        {
+          "name": "markup.italic.cn.fkp",
+          "match": "锁定技|普通技|默认技|觉醒技|限定技"
+        },
+        {
+          "name": "markup.bold.cn.fkp",
+          "match": "触发技|视为技|主动技|状态技"
+        }
+      ]
+    },
+    "variable": {
+      "patterns": [
+        {
+          "begin": "‘",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.variable.begin.fkp"
+            }
+          },
+          "end": "’[ \\t]*|(?=\\n)",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.variable.end.fkp"
+            }
+          },
+          "name": "variable.quoted.cn.fkp"
+        },
+        {
+          "begin": "'",
+          "beginCaptures": {
+            "0": {
+              "name": "punctuation.definition.variable.begin.fkp"
+            }
+          },
+          "end": "'[ \\t]*|(?=\\n)",
+          "endCaptures": {
+            "0": {
+              "name": "punctuation.definition.variable.end.fkp"
+            }
+          },
+          "name": "variable.quoted.en.fkp"
+        },
+        {
+          "name": "variable.language.cn.fkp",
+          "match": "你|其|不存在的"
+        },
+        {
+          "name": "variable.other.fkp",
+          "match": "[_a-zA-Z][_a-zA-Z0-9]*"
+        }
+      ]
+    },
+    "constant": {
+      "patterns": [
+        {
+          "name": "constant.numeric.fkp",
+          "match": "-?[0-9]+"
+        },
+        {
+          "name": "constant.language.fkp",
+          "match": "真|假"
+        }
+      ]
+    }
+  },
+  "scopeName": "source.fkp"
+}
